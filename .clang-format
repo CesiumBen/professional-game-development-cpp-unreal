@@ -1,0 +1,30 @@
+BasedOnStyle: LLVM
+AlignAfterOpenBracket: AlwaysBreak
+BinPackArguments: false
+BinPackParameters: false
+PointerAlignment: Left
+ConstructorInitializerAllOnOneLineOrOnePerLine: true
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowAllArgumentsOnNextLine: false
+# Rules for Unreal Engine Pregenerated Headers
+IncludeCategories:
+  - Regex:           '.*\.generated\.h'
+    Priority:        100
+  - Regex:           '.*(PCH).*'
+    Priority:        -1
+# Don't break string literals - Unreal isn't good at handling them
+BreakStringLiterals: false
+# Don't break macros
+WhitespaceSensitiveMacros:
+- DECLARE_DELEGATE
+- DECLARE_DELEGATE_OneParam
+- DECLARE_DELEGATE_RetVal
+- DECLARE_DELEGATE_RetVal_OneParam
+- DECLARE_MULTICAST_DELEGATE
+- DECLARE_MULTICAST_DELEGATE_OneParam
+- DECLARE_MULTICAST_DELEGATE_TwoParams
+- DECLARE_MULTICAST_DELEGATE_ThreeParams
+- DECLARE_DYNAMIC_MULTICAST_DELEGATE
+- DECLARE_DYNAMIC_MULTICAST_DELEGATE_OneParam
+- DECLARE_DYNAMIC_MULTICAST_DELEGATE_TwoParams
+- DECLARE_DYNAMIC_MULTICAST_DELEGATE_ThreeParams
